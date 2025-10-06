@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><title>Invitación Jhonatan y María Alejandra</title></head>
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Jhonatan & María Alejandra — Invitación</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;600&display=swap">
+
+<style>
+  :root{
+    --oliva:#6b704f;        /* verde olivo */
+    --beige:#d9cdb9;        /* beige */
+    --offwhite:#f7f3ee;     /* blanco rústico */
+    --text:#3a3a36;
+    --muted:#6f6a61;
+    --gold:#c9b693;         /* beige-dorado claro para el borde */
+    --max: 980px;
+  }
+
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0;
+    font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color:var(--text);
+    /* Fondo madera clara fija (parallax) */
+    background:
+      linear-gradient(0deg, rgba(0,0,0,.04), rgba(0,0,0,.04)),
+      url('https://images.unsplash.com/photo-1505682634904-d7c9d1ac2b8d?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* fijo */
+    background-position: center;
+    padding: 20px;
+  }
+
+  .wrap{
+    max-width: var(--max);
+    margin: 0 auto;
+  }
+
+  /* Tarjeta central tipo invitación */
+  .card{
+    background: var(--offwhite);
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 10px 35px rgba(30,25,15,.15);
+    /* Borde beige-dorado */
+    border: 2px solid var(--gold);
+    outline: 10px solid rgba(255,255,255,.55); /* efecto marco elegante */
+    backdrop-filter: blur(1px);
+  }
+
+  header{
+    text-align: center;
+    padding: 10px 10px 0 10px;
+  }
+  .tagline{
+    color: var(--oliva);
+    font-family: "Playfair Display", serif;
+    font-size: 22px;
+    letter-spacing:.3px;
+  }
+  h1{
+    margin: 6px 0 2px 0;
+    font-family: "Playfair Display", serif;
+    color: var(--oliva);
+    font-size: 28px;
+  }
+  .sub{
+    color: var(--muted);
+    font-size: 13px;
+  }
+
+  /* Foto enmarcada */
+  .photo-frame{
+    margin: 14px auto 8px auto;
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 3px solid var(--gold);
+    box-shadow: 0 6px 18px rgba(0,0,0,.12);
+    max-height: 380px;
+  }
+  .photo-frame img{
+    display:block;
+    width:100%;
+    height:100%;
+    object-fit: cover;
+  }
+
+  /* Contenido */
+  .grid{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  @media (min-width: 860px){
+    .grid{ grid-template-columns: 1.25fr .9fr; }
+  }
+
+  .section{
+    background: #fff;
+    border-radius: 14px;
+    border: 1px solid rgba(0,0,0,.06);
+    padding: 16px;
+  }
+  .section h2{
+    margin: 0 0 10px 0;
+    font-family: "Playfair Display", serif;
+    color: var(--oliva);
+    font-size: 20px;
+  }
+  .lead{ color: var(--muted); line-height: 1.6; margin:0 0 8px 0 }
+
+  .info-grid{
+    display:flex; gap:10px; flex-wrap:wrap;
+  }
+  .pill{
+    flex:1 1 180px;
+    background: rgba(217,205,185,.4);
+    border:1px solid rgba(0,0,0,.05);
+    border-radius: 10px;
+    padding: 10px;
+  }
+  .pill small{ display:block; color:var(--muted); font-size:12px }
+  .pill strong{ display:block; margin-top:4px; }
+
+  /* Countdown */
+  .countdown{ display:flex; gap:10px; flex-wrap:wrap; margin-top:6px }
+  .unit{
+    min-width:80px; text-align:center;
+    background: rgba(107,112,79,.07);
+    border-radius:10px; padding:10px 8px;
+  }
+  .unit strong{
+    display:block;
+    color: var(--oliva);
+    font-family: "Playfair Display", serif;
+    font-size: 20px;
+  }
+  .unit span{ font-size: 12px; color: var(--muted) }
+
+  .btn{
+    display:inline-block;
+    padding: 10px 14px;
+    border-radius: 10px;
+    background: var(--oliva);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    border: 0;
+    cursor: pointer;
+  }
+  .btn.alt{ background: #8a7f60; }
+
+  footer{
+    text-align:center;
+    color: var(--muted);
+    font-size: 12px;
+    margin-top: 12px;
+  }
+
+  /* Aviso por si el autoplay se bloquea */
+  .autoplay-note{
+    display:none;
+    margin-top:8px;
+    font-size: 12px;
+    color: var(--muted);
+    text-align: center;
+  }
+
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <div class="card" role="main" aria-labelledby="title">
+    <header>
+      <div class="tagline">Por toda la vida</div>
+      <h1 id="title">Jhonatan & María Alejandra</h1>
+      <div class="sub">25 de abril de 2026 · Pinto, Madrid</div>
+
+      <!-- Foto del JARDÍN enmarcada -->
+      <figure class="photo-frame" aria-label="Foto de la pareja en el jardín">
+        <img src="images/pareja_jardin.jpg" alt="Jhonatan y María Alejandra en el jardín">
+      </figure>
+    </header>
+
+    <div class="grid">
+      <!-- Columna izquierda -->
+      <section class="section" aria-labelledby="ceremonia">
+        <h2 id="ceremonia">Ceremonia & Recepción</h2>
+        <p class="lead">Acompáñanos en una ceremonia íntima en la <strong>Iglesia San José</strong> y celebremos después en <strong>La Casita de Pinto</strong> con un ambiente rústico y primaveral.</p>
+
+        <div class="info-grid">
+          <div class="pill"><small>Fecha</small><strong>25 de abril de 2026</strong></div>
+          <div class="pill"><small>Ceremonia</small><strong>12:00 · Iglesia San José</strong></div>
+          <div class="pill"><small>Recepción</small><strong>14:00 · La Casita de Pinto</strong></div>
+        </div>
+
+        <!-- Cuenta regresiva -->
+        <div style="margin-top:14px">
+          <h2 style="font-size:18px;margin:0 0 8px 0;color:var(--oliva);font-family:'Playfair Display',serif">Cuenta regresiva</h2>
+          <div class="countdown" id="countdown" aria-live="polite">
+            <div class="unit"><strong id="d">--</strong><span>Días</span></div>
+            <div class="unit"><strong id="h">--</strong><span>Horas</span></div>
+            <div class="unit"><strong id="m">--</strong><span>Min</span></div>
+            <div class="unit"><strong id="s">--</strong><span>Seg</span></div>
+          </div>
+        </div>
+
+        <!-- RSVP -->
+        <div style="margin-top:16px">
+          <h2 style="font-size:18px;margin:0 0 8px 0;color:var(--oliva);font-family:'Playfair Display',serif">Confirmación (RSVP)</h2>
+          <p class="lead" style="margin-top:0">Por favor confirma tu asistencia en el formulario:</p>
+          <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSetrbM8g_42M6W_rChuMgW-1oM3CAqOnXuDaRKUTGtLuFXT_Q/viewform?usp=header" target="_blank" rel="noopener">Confirmar asistencia</a>
+        </div>
+      </section>
+
+      <!-- Columna derecha -->
+      <aside class="section" aria-labelledby="info">
+        <h2 id="info">Información útil</h2>
+
+        <div>
+          <h3 style="margin:0 0 6px 0;color:var(--oliva);font-size:16px;font-family:'Playfair Display',serif">Cómo llegar</h3>
+          <div class="lead" style="margin-top:0">
+            <strong>Iglesia San José</strong><br>
+            C. de Terreros, 8, 28320 Pinto, Madrid<br>
+            <a class="btn" style="margin-top:8px" href="https://www.google.com/maps/search/?api=1&query=C.+de+Terreros+8,+28320+Pinto+Madrid" target="_blank" rel="noopener">Ver en Google Maps</a>
+          </div>
+
+          <div class="lead" style="margin-top:12px">
+            <strong>La Casita de Pinto</strong><br>
+            Cam. de Torrejón de Velasco a Pinto, 28320 Pinto, Madrid<br>
+            <a class="btn alt" style="margin-top:8px" href="https://www.google.com/maps/search/?api=1&query=Camino+de+Torrejon+de+Velasco+a+Pinto,+28320+Pinto+Madrid" target="_blank" rel="noopener">Ver en Google Maps</a>
+          </div>
+        </div>
+
+        <div style="margin-top:14px">
+          <h3 style="margin:0 0 6px 0;color:var(--oliva);font-size:16px;font-family:'Playfair Display',serif">Código de vestimenta</h3>
+          <p class="lead" style="margin-top:0">
+            Mujeres: vestido largo y fresco, ideal para la primavera.<br>
+            Hombres: traje y corbata.<br><br>
+            <em>Colores reservados para la novia: beige y blanco.</em>
+          </p>
+        </div>
+
+        <div style="margin-top:14px">
+          <h3 style="margin:0 0 6px 0;color:var(--oliva);font-size:16px;font-family:'Playfair Display',serif">Música</h3>
+          <p class="lead" style="margin-top:0">Piano y cuerdas románticas. (se iniciará sola)</p>
+          <div class="autoplay-note" id="autoplayNote">
+            Si no escuchas la música, tu navegador bloqueó la reproducción automática. Pulsa el botón:
+            <button class="btn" id="playBtn" type="button">▶ Reproducir</button>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <footer>
+      Pinto, Madrid · 25 de abril de 2026 · Por toda la vida — Jhonatan & María Alejandra
+    </footer>
+  </div>
+</div>
+
+<!-- Audio (puedes cambiar la pista si quieres) -->
+<audio id="bgMusic" loop preload="auto">
+  <source src="https://cdn.pixabay.com/audio/2023/05/07/audio_2f2ef0aab2.mp3" type="audio/mpeg">
+  Tu navegador no soporta audio.
+</audio>
+
+<script>
+  /* -------- Countdown a 25/04/2026 12:00 (Madrid) -------- */
+  const target = new Date("2026-04-25T12:00:00+02:00");
+  function updateCountdown(){
+    const now = new Date();
+    let diff = target - now;
+    if(diff < 0) diff = 0;
+    const d = Math.floor(diff / 86400000);
+    const h = Math.floor(diff / 3600000) % 24;
+    const m = Math.floor(diff / 60000) % 60;
+    const s = Math.floor(diff / 1000) % 60;
+    document.getElementById('d').textContent = d;
+    document.getElementById('h').textContent = String(h).padStart(2,'0');
+    document.getElementById('m').textContent = String(m).padStart(2,'0');
+    document.getElementById('s').textContent = String(s).padStart(2,'0');
+  }
+  updateCountdown(); setInterval(updateCountdown, 1000);
+
+  /* -------- Música con autoplay + fallback -------- */
+  const music = document.getElementById('bgMusic');
+  const note = document.getElementById('autoplayNote');
+  const playBtn = document.getElementById('playBtn');
+
+  function tryPlay(){
+    music.play().then(()=>{
+      // ok, suena
+      if(note) note.style.display = 'none';
+    }).catch(()=>{
+      // bloqueado por el navegador
+      if(note) note.style.display = 'block';
+    });
+  }
+  // intentamos iniciar 2s después de cargar
+  window.addEventListener('load', ()=> {
+    setTimeout(tryPlay, 2000);
+  });
+  if(playBtn){
+    playBtn.addEventListener('click', tryPlay);
+  }
+</script>
+</body>
+</html>
+
+   
